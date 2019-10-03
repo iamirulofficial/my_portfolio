@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body, html{
+	height: 100%;
+	color: #584e4a;
+	font-family: 'Quicksand', sans-serif;
+	overflow: hidden;
+}
+	.pagina{
+		background-color: #584e4a;
+		//display: block;
+		height: 100%;
+	}
+		.btn_menu{
+			//left: 0;
+			//top: 0;
+			z-index: 900;
+			background-color: #662dff;
+			border-bottom-right-radius: 100%;
+			cursor: pointer;
+			display: block;
+			height: 80px;
+			position: fixed;
+			width: 100px;
+		}
+			.menu_open,
+			.menu_close{
+				transition: transform 0.7s cubic-bezier(1,.01,.11,1.29);
+				left: 50%;
+				margin-left: -12px;
+				margin-top: -15px;
+				position: absolute;
+				top: 50%;
+				color: #f0f0f0;
+			}
+			.menu_open{
+				transform-origin: -100px -100px;
+			}
+			.menu_close{
+				transform: rotate(30deg);
+				transform-origin: -100px -180px;
+			}
+		.btn_menu:active i{
+			opacity: 0.8;
+		}
+		.iconos_bg{
+			//margin:0;
+			//padding: 0;
+			bottom: 0;
+			left: 50px;
+			list-style-type: none;
+			position: fixed;
+		}
+			.lista_iconos{
+				transform: translateX(-300px);
+				transition: transform 0.7s 0s cubic-bezier(1,.01,.11,1.29);
+				height: 60px;
+				margin-bottom:30px;
+			}
+				.lista_iconos a{
+					color: #a4a4a4;
+					letter-spacing: 4px;
+					text-decoration: none;
+					text-transform: uppercase;
+					//display: block;
+					transition: color 0.2s;
+				}
+					.icon{
+						margin-right: 25px;
+						color: #f0f0f0;
+						position: relative;
+						//display: inline-block;
+					}
+
+					.icon:after{
+						border-radius: 100%;
+						border: 2px solid #f0f0f0;
+						content: '';
+						display: block;
+						height: 60px;
+						left: 50%;
+						margin-left: -33px;
+						margin-top: -32px;
+						position: absolute;
+						top: 50%;
+						width:60px;
+					}
+				.lista_iconos a:hover{
+					color: #f0f0f0;
+				}
+				.lista_iconos a:hover	.icon:after{
+						border-color: ;
+					}
+				.lista_iconos a:active .icon{
+					color: #662dff;
+				}
+
+			li:nth-child(2){
+				margin-left: 40px;
+			}
+			li:nth-child(3){
+				margin-left: 80px;
+			}
+
+		.contenido{
+			transform-origin: top left;
+			transition: transform 0.7s cubic-bezier(1,.01,.11,1.29); 
+			background-color: #f0f0f0;
+			height: 200%;		
+		}
+			.contenido_interno{
+				//height: 50%;
+				padding: 50px 20%;
+				overflow-y: auto;
+				font-size: auto;
+			}
+			h1{
+				padding-bottom: 15px;
+				border-bottom: 1px solid #ddd;
+				font-size: 42px;
+
+			}
+			.redes{
+				text-align: right;
+			}
+				.icon_redes{
+					background-color: #662dff;
+					border-radius: 50px;
+					color: white;
+					font-size: 20px;
+					height: 40px;
+					line-height: 40px;
+					text-align: center;
+					width: 40px;
+				}
+
+	.real .contenido{
+		transform: rotate(-30deg);
+		}
+	.real .btn_menu .menu_open{
+		transform: rotate(-30deg);
+		}
+	.real .btn_menu .menu_close{
+		transform: rotate(0deg);
+		}
+	.real .iconos_bg{}
+	.real .iconos_bg .lista_iconos{
+		transform: translateX(0);
+		transition: transform 0.35s 0.45s cubic-bezier(0.175,0.885,0.32,1.275);
+		}

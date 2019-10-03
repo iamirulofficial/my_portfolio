@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+*
+  box-sizing: border-box //La propiedad CSS box-sizing como el user agent debe calcular el ancho y alto total de un elemento.
+  margin: 0
+  padding: 0
+
+html, body
+	font-family 'Quicksand', sans-serif
+	height 100%
+	overflow hidden //especifica: si recortar contenido, dibujar barras de desplazamiento o mostrar el contenido excedente en un elemento a nivel de bloque.
+	
+body
+	color #584e4a
+	
+	.pagina
+		height 100%
+		background-color #584e4a
+		display block
+		
+		.btn_menu
+			background-color #f37272
+			border-bottom-right-radius 100%
+			cursor pointer
+			display block // Un elemento block-level comienza en una nueva línea y se estira hasta la derecha e izquierda tan lejos como pueda. Span es por defecto inline
+			height 80px
+			left 0
+			position fixed //especifica cómo un elemento es posicionado en el documento. Las propiedades top, right, bottom, y left determinan la ubicación final de los elementos posicionados.
+			top 0
+			width 100px
+			z-index 900
+			
+			.menu_open, .menu_close
+				left 50%
+				margin-left -12px
+				margin-top -15px
+				position absolute // Si un elemento con position: absolute; no tiene ancestros posicionados, usará el elemento body del documento, y se seguirá moviendo al hacer scroll en la página. 
+				top 50%
+				transition transform 0.7s cubic-bezier(1,.01,.11,1.29)
+			
+			.menu_open
+				transform-origin -100px -100p
+x				
+			.menu_close
+				transform rotate(20deg)
+				transform-origin -100px -160px			
+		
+
+		.btn_menu:active i //Mientras se esté cliqueando
+			opacity 0.8
+			
+		.btn_menu i
+			color #f0f0f0
+			
+
+		.iconos_bg
+				bottom 0px
+				left 50px
+				list-style-type none
+				margin 0
+				padding 0
+				position fixed
+			
+			li 
+				height 60px
+				margin-bottom 30px
+				transform translateX(-300px) //Es usada para animaciones
+				transition transform 0.7s 0s cubic-bezier(1,.01,.11,1.29)
+				
+				a 
+					color #a4a4a4
+					display block
+					letter-spacing 2px //Espacio entre letras
+					text-decoration none
+					text-transform uppercase
+					transition color 0.2s
+					
+					.icon
+						position relative // El desplazamiento no afecta la posición de ningún otro elemento. 
+						display inline-block
+						margin-right 25px
+						color #f0f0f0
+					
+					.icon:after
+						content ''
+						position absolute
+						top 50%
+						left 50%
+						display block
+						width 60px
+						height 60px
+						margin-left -33px
+						margin-top -32px
+						border 2px solid #f0f0f0
+						transition border-color 0.2s
+						border-radius 100%
+						
+				a:hover
+					color #f0f0f0
+					
+					.icon:after
+						border-color #f37272
+						
+				a:active
+					.icon
+						color #f37272
+					
+				
+			li:nth-child(2)//coincide con uno o más elementos en función de su posición entre un grupo de hermanos.
+				margin-left 40px
+				
+			li:nth-child(3)
+				margin-left 80px
+								
+
+		.contenido
+			background-color #f0f0f0
+			height 200%
+			transform-origin top left
+			transition transform 0.7s cubic-bezier(1,.01,.11,1.29) 
+			
+			.contenido_interno
+				height 50%
+				overflow-y auto //En la mayoría de los navegadores, equivalente a scroll
+				padding 50px 20%
+				
+				h1 
+					padding-bottom 15px
+					border-bottom 1px solid #ddd
+					
+				.redes
+					i
+						background-color #f37272
+						border-radius 50px
+						color white
+						font-size 20px
+						height 40px
+						line-height 40px
+						text-align center
+						width 40px
+						
+	.real 
+		.contenido
+			transform rotate(-30deg)
+
+		.btn_menu
+			.menu_open
+				transform rotate(-20deg)
+			
+			.menu_close
+				transform rotate(0)
+			 
+		.iconos_bg 
+			li 
+				transform translateX(0)
+				transition transform 0.35s 0.45s cubic-bezier(0.175,0.885,0.32,1.275)
+			
+			li:nth-child(2)
+				transition-delay 0.47s
+				
+			li:nth-child(3)
+				transition-delay 0.48s
